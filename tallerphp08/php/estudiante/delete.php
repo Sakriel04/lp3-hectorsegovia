@@ -5,12 +5,8 @@
     require_once('estudianteModel.php');
     $object = new estudianteModel();
 
-    $nombre = $_REQUEST['nombre'];
-    $apellido = $_REQUEST['apellido'];
-    $codigocurso = $_REQUEST['codigocurso'];
-    
-    echo "store";
-    $registro = $object->insertar($nombre,$apellido,$codigocurso);
+    $idEstudiante = $_REQUEST['id'];
+    $object->eliminar($idEstudiante);
 
      header('location: index.php');
 ?>

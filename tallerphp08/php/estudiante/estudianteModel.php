@@ -8,22 +8,22 @@
             $data = new dataConex();
             $this->PDO = $data->conexion();
         }
-        public function insertar($nombre,$apellido,$codigocurso,) {
-            $sql = 'INSERT INTO estudiantes VALUES (0,:nombre,:apellido,:codigoCurso)';
+        public function insertar($nombre,$apellido,$codigocurso) {
+            $sql = 'INSERT INTO estudiantes VALUES (0,:nombre,:apellido,:codigocurso)';
             $statement = $this->PDO->prepare($sql);
             $statement->bindParam(':nombre',$nombre);
             $statement->bindParam(':apellido',$apellido);
-            $statement->bindParam(':codigoCurso',$codigoCurso);
+            $statement->bindParam(':codigocurso',$codigocurso);
             $statement->execute();
             return ($this->PDO->lastInsertId());
         }
 
         public function actualizar($idEstudiante,$nombre,$apellido,$codigocurso) {
-            $sql = 'UPDATE estudiantes SET nombre=:nombre,apellido=:apellido,codigoCurso=:codigoCurso WHERE idEstudiante=:idEstudiante';
+            $sql = 'UPDATE estudiantes SET nombre=:nombre,apellido=:apellido,codigocurso=:codigocurso WHERE idEstudiante=:idEstudiante';
             $statement = $this->PDO->prepare($sql);
             $statement->bindParam(':nombre',$nombre);
             $statement->bindParam(':apellido',$apellido);
-            $statement->bindParam(':codigoCurso',$codigoCurso);
+            $statement->bindParam(':codigocurso',$codigocurso);
             $statement->bindParam(':idEstudiante',$idEstudiante);
             return ($statement->execute()) ? true : false;
         }
@@ -36,7 +36,7 @@
         }
         
         public function listar(){
-           $sql = 'SELECT * FROM estudiantes ORDER BY idEstudiante DESC';
+           $sql = 'SELECT idEstudiante,nombre,apellido,codigoCurso, IF(codigoCurso=1,"VUE",if(codigoCurso=2,"RUBY", "PHP")) AS curso FROM estudiantes ORDER BY idEstudiante DESC';
            $statement = $this->PDO->prepare($sql);
            return ($statement->execute()) ? $statement->fetchAll() : false; 
         }
