@@ -40,9 +40,9 @@
                     <th><?=$row['apellido']?></th>
                     <td>
                         <a class = "btn btn-info" data-bs-toggle="modal" data-bs-target="#idver<?=$row['idEstudiante']?>">Ver</a>
-                        <a class = "btn btn-warning" href="">Editar</a>
+                        <a href = "edit.php?id=<?= $row['idEstudiante']?>" class = "btn btn-warning">Editar</a>
                         <a class = "btn btn-danger" data-bs-toggle="modal" data-bs-target="#iddel<?=$row['idEstudiante']?>">Eliminar</a>
-         
+
                         <!-- modal para ver y del-->
                         <?php 
                             include ('viewModal.php');
