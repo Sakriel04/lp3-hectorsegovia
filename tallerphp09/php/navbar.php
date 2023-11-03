@@ -17,7 +17,7 @@
                 <li><a class="dropdown-item" href="/tallerphp09/php/estudiante/create.php">Agregar</a></li>
                 <li><hr class="dropdown-divider"></li>                
                 <li><a class="dropdown-item" href="/tallerphp09/php/estudiante/">Listar</a></li>
-                <li><a class="dropdown-item" href="#">Imprimimr</a></li>
+                <li><a class="dropdown-item" href="#">Imprimir</a></li>
             </ul>
             </li>
         </ul>

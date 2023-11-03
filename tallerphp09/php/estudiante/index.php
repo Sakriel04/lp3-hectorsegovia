@@ -19,6 +19,7 @@
     ?>
     <section class = "intro">
     <div class="container">
+        <br><p align="right"><a class="btn btn-info" href="/tallerphp09/php/estudiante/create.php"><FONT COLOR="white"><b>Agregar registro</FONT></a>
         <div class="mb-3">
             <h2>Listado de Estudiantes</h2>
         </div>
