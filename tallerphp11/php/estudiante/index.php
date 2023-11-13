@@ -19,9 +19,12 @@
     ?>
     <section class = "intro">
     <div class="container">
-        <br><p align="right"><a class="btn btn-info" href="/tallerphp11/php/estudiante/create.php"><FONT COLOR="white"><b>Agregar registro</FONT></a>
         <div class="mb-3">
             <h2>Listado de Estudiantes</h2>
+        </div>
+        <div class="mb-3">
+            <a href="./create.php" class="btn btn-primary">Agregar</a>
+            <a href="javascript:imprimirWindow('ventana')" class="btn btn-info">Imprimir</a>
         </div>
         <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position:relative; heigth=700px;">
         <table class="table table-striped mb-0">
@@ -57,7 +60,37 @@
         </table>
     </div>
     </div>
-    </section>
+</section>
+        <!-- div area de impresion -->
+        <div class="container" id="ventana" style="display: none">
+            <div class="mb-3">
+                <h2 style="font-size: 3.00rem">Listado de Estudiantes</h2>
+                <h4><?=date('d/m/Y')?></h4>
+            </div>
+            <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position:relative; heigth=700px;">
+            <table class="table table-striped mb-0" style="font-size: 2.00rem;">
+                <thead style="background-color: #002d72;">
+                    <tr>
+                        <th colspan="1" scope="col">ID</th>
+                        <th colspan="3" scope="col">NOMBRE</th>
+                        <th colspan="3" scope="col">APELLIDO</th>
+                        <th colspan="3" scope="col">OPERACIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($rows as $row) { ?>
+                    <tr>
+                        <td colspan="1"><?=$row['idEstudiante']?></td>
+                        <td colspan="3"><?=$row['nombre']?></td>
+                        <td colspan="3"><?=$row['apellido']?></td>
+                        <td colspan="3"><?=$row['curso']?></td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+        <!-- fin area de impresion -->
 </body>
 <script src="../../js/bootstrap.bundle.min.js"></script>
+<script src="../../js/print.window.js"></script>
 </html>
