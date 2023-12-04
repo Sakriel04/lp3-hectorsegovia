@@ -4138,6 +4138,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  background-color: #18181c;
 }
 
 .navbar-nav .nav-link {
@@ -4489,9 +4490,9 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #22272Dff;
   background-clip: border-box;
-  border: 1px solid #e3e6f0;
+  border: 1px solid #22272Dff;
   border-radius: 0.35rem;
 }
 
@@ -6481,7 +6482,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #5a5c69 !important;
+  background-color: #22272Dff !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
